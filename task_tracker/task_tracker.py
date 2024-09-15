@@ -45,7 +45,7 @@ def update_task(the_id, the_description=False):
     else:
         if the_description:
             task[the_id]['description'] = the_description
-            task[the_id]['updatedAt'] = datetime.now().strftime("%d%m%Y")
+            task[the_id]['updatedAt'] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             save_task(task)
 
 
@@ -74,7 +74,7 @@ def mark_in_progress(the_id):
         print(f"Aucune tâche avec cet ID.")
     else:
         task[the_id]['status'] = 'in-progress'
-        task[the_id]['updatedAt'] = datetime.now().strftime("%d%m%Y")
+        task[the_id]['updatedAt'] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
         save_task(task)
 
 
@@ -89,7 +89,7 @@ def mark_done(the_id):
         print(f"Aucune tâche avec cet ID.")
     else:
         task[the_id]['status'] = 'done'
-        task[the_id]['updatedAt'] = datetime.now().strftime("%d%m%Y")
+        task[the_id]['updatedAt'] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
         save_task(task)
 
 
